@@ -1,0 +1,36 @@
+server:
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+rapid:
+  api:
+   key: a2efcecfb4mshb8091fc2181f8f1p1ae43ajsn1e2ea63028da
+   host: weatherapi-com.p.rapidapi.com
+   url: https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk
+
+# schedule in cron format
+schedule:
+  cron: ${0 */1 * * * *}
+
+logging:
+  level:
+    org.springframework: ERROR
+    com.mkyong: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+  file:
+    name: log/app.log
+  logback:
+    rollingpolicy:
+      max-file-size: 1024KB
+

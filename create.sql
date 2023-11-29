@@ -1,0 +1,1 @@
+create table weather (atmospheric_pressure float(53), humidity float(53), last_updated date, temperature float(53), weather_conditions float(53), wind_speed float(53), id bigserial not null, location varchar(255), primary key (id));
