@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +34,7 @@ public class RapidWeatherClient implements WeatherClient {
     @Override
     public Weather getInformation() {
         HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.set("X-RapidAPI-Key", apiKey);
         headers.set("X-RapidAPI-Host", apiHost);
 
