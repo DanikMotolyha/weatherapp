@@ -10,6 +10,7 @@ services:
       POSTGRES_DB:        weather
       POSTGRES_USER:      root
       POSTGRES_PASSWORD:  root
+      PGDATA: /var/lib/postgresql/data/
     volumes:
       - db:/var/lib/postgresql/
     ports:
@@ -23,4 +24,4 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_URL: jdbc:postgresql://db-postgres:5432/weather
-      SHCEDULED_UPDATE_WEATHER_INTERVAL: "0 */1 * * * *"
+      SCHEDULED_UPDATE_WEATHER_INTERVAL: "0 */30 * * * *"
