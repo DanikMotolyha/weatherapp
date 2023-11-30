@@ -105,10 +105,10 @@ Date: Thu, 30 Nov 2023 12:19:08 GMT
 ```
 Data
 ```
-HTTP/1.1 404
-Content-Type: application/problem+json
+HTTP/1.1 200
+Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Thu, 30 Nov 2023 12:19:08 GMT
+Date: Thu, 30 Nov 2023 12:20:28 GMT
 
 {
     "temperature":-6.0,
