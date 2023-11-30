@@ -29,7 +29,7 @@ cd weatherapp
 3. use gradle to build Spring Boot Application
 
 ```sh
-gradle build
+gradlew build
 ```
 
 4. use docker-compose to run application
