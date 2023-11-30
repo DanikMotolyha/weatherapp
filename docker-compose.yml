@@ -24,4 +24,4 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_URL: jdbc:postgresql://db-postgres:5432/weather
       #every 1 minute, uses cron format
-      SHCEDULED_UPDATE_WEATHER_INTERVAL: '0 */1 * * * *'
+      SHCEDULED_UPDATE_WEATHER_INTERVAL: "0 */1 * * * *"

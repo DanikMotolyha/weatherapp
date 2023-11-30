@@ -19,7 +19,7 @@ rapid:
 
 # schedule in cron format
 schedule:
-  cron: ${0 */1 * * * *}
+  cron: ${SHCEDULED_UPDATE_WEATHER_INTERVAL}
 
 logging:
   level:
