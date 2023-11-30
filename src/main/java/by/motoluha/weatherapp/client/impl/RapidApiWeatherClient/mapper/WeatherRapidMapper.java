@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 @Mapper(componentModel = "spring")
 public interface WeatherRapidMapper {
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(source = "location.name", target = "location")
     @Mapping(source = "current.lastUpdated", target = "lastUpdated", qualifiedByName = "stringToLocalDate")
     @Mapping(source = "current.temperature", target = "temperature")
