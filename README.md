@@ -11,6 +11,10 @@
 - [Interaction](#Interaction)
 - [Getting Started](#getting-started)
 - [Docker compose](#docker-compose)
+  
+### Requirements
+* docker
+* java 17
 
 ### Getting Started
 
