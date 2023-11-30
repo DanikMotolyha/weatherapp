@@ -26,13 +26,13 @@ git clone https://github.com/DanikMotolyha/weatherapp.git
 cd weatherapp
 ```
 
-3. use gradle to start Spring Boot Application
+3. use gradle to build Spring Boot Application
 
 ```sh
 gradle build
 ```
 
-4. use docker-compose to run application with postgres
+4. use docker-compose to run application
 
 ```sh
 docker-compose up
@@ -76,7 +76,8 @@ example response
     "atmosphericPressure":997.0,
     "humidity":86,
     "weatherConditions":100,
-    "location":"Minsk"}
+    "location":"Minsk"
+}
 ```
 
 ### Docker-compose
