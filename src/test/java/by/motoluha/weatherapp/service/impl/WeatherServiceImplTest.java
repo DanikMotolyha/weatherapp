@@ -3,6 +3,7 @@ package by.motoluha.weatherapp.service.impl;
 import by.motoluha.weatherapp.client.WeatherClient;
 import by.motoluha.weatherapp.dto.WeatherDTO;
 import by.motoluha.weatherapp.entity.Weather;
+import by.motoluha.weatherapp.exception.WeatherNotFoundException;
 import by.motoluha.weatherapp.mapper.WeatherMapper;
 import by.motoluha.weatherapp.repository.WeatherRepository;
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 class WeatherServiceImplTest {
@@ -37,7 +39,7 @@ class WeatherServiceImplTest {
     }
 
     @Test
-    void getLastWeatherPositive() {
+    void getLastWeather_Positive() {
         Weather weather = new Weather();
         when(weatherRepository.findFirstByOrderByIdDesc()).thenReturn(weather);
         WeatherDTO lastWeather = weatherService.getLastWeather();
@@ -45,14 +47,13 @@ class WeatherServiceImplTest {
     }
 
     @Test
-    void getLastWeatherPositiveNull() {
+    void getLastWeather_NotFoundException() {
         when(weatherRepository.findFirstByOrderByIdDesc()).thenReturn(null);
-        WeatherDTO lastWeather = weatherService.getLastWeather();
-        assertNull(lastWeather);
+        assertThrows(WeatherNotFoundException.class, () -> weatherService.getLastWeather());
     }
 
     @Test
-    void getAverageDailyWeatherPositive() {
+    void getAverageDailyWeather_Positive() {
         LocalDate from = LocalDate.of(2023, 11, 29);
         LocalDate to = LocalDate.of(2023, 11, 30);
 
@@ -73,7 +74,13 @@ class WeatherServiceImplTest {
     }
 
     @Test
-    void scheduleGetCurrentWeatherException() {
+    void getAverageDailyWeather_NotFoundException() {
+        when(weatherRepository.findByLastUpdatedBetween(null, null)).thenReturn(null);
+        assertThrows(WeatherNotFoundException.class, () -> weatherService.getAverageDailyWeather(null, null));
+    }
+
+    @Test
+    void scheduleGetCurrentWeather() {
         Weather weather = new Weather();
         when(weatherClient.getInformation()).thenReturn(weather);
 

@@ -24,4 +24,4 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_URL: jdbc:postgresql://db-postgres:5432/weather
-      SCHEDULED_UPDATE_WEATHER_INTERVAL: "0 */30 * * * *"
+      SCHEDULED_UPDATE_WEATHER_INTERVAL: "0 */1 * * * *"

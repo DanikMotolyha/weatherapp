@@ -1,7 +1,3 @@
-server:
-  error:
-    include-message: always
-
 spring:
   datasource:
     url: ${POSTGRES_URL}
@@ -13,9 +9,9 @@ spring:
 
 rapid:
   api:
-   key: a2efcecfb4mshb8091fc2181f8f1p1ae43ajsn1e2ea63028da
-   host: weatherapi-com.p.rapidapi.com
-   url: https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk
+    key: a2efcecfb4mshb8091fc2181f8f1p1ae43ajsn1e2ea63028da
+    host: weatherapi-com.p.rapidapi.com
+    url: https://weatherapi-com.p.rapidapi.com/current.json?q=Minsk
 
 # schedule in cron format
 schedule:
