@@ -45,12 +45,32 @@ Two endpoints:
 #### 1. Give current weather info from database
 
 ```
-curl localhost:8080/weather/current/
+curl -i localhost:8080/weather/current/
 ```
 
 example response
-
+Empty
 ```
+HTTP/1.1 404
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Thu, 30 Nov 2023 12:19:08 GMT
+
+{
+    "type":"about:blank",
+    "title":"Not Found",
+    "status":404,
+    "detail":"Database is empty",
+    "instance":"/weather/current/"
+}
+```
+Data
+```
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 30 Nov 2023 12:20:28 GMT
+
 {
     "temperature":-6.0,
     "windSpeed":18.6,
@@ -68,8 +88,28 @@ curl "localhost:8080/weather/average/?from=2023-11-29&to=2023-11-30"
 ```
 
 example response
-
+Empty
 ```
+HTTP/1.1 404
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Thu, 30 Nov 2023 12:19:08 GMT
+
+{
+    "type":"about:blank",
+    "title":"Not Found",
+    "status":404,
+    "detail":"Database is empty",
+    "instance":"/weather/current/"
+}
+```
+Data
+```
+HTTP/1.1 404
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Thu, 30 Nov 2023 12:19:08 GMT
+
 {
     "temperature":-6.0,
     "windSpeed":18.6,
