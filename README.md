@@ -84,7 +84,7 @@ Date: Thu, 30 Nov 2023 12:20:28 GMT
 #### 1. Give average daily weather info from database
 
 ```
-curl "localhost:8080/weather/average/?from=2023-11-29&to=2023-11-30"
+curl -i "localhost:8080/weather/average/?from=2023-11-29&to=2023-11-30"
 ```
 
 example response
