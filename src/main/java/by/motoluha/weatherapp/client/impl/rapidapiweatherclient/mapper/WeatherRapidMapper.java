@@ -1,6 +1,6 @@
-package by.motoluha.weatherapp.client.impl.RapidApiWeatherClient.mapper;
+package by.motoluha.weatherapp.client.impl.rapidapiweatherclient.mapper;
 
-import by.motoluha.weatherapp.client.impl.RapidApiWeatherClient.model.WeatherRapidResponse;
+import by.motoluha.weatherapp.client.impl.rapidapiweatherclient.model.WeatherRapidResponse;
 import by.motoluha.weatherapp.entity.Weather;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

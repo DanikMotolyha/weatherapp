@@ -1,8 +1,8 @@
-package by.motoluha.weatherapp.client.impl.RapidApiWeatherClient;
+package by.motoluha.weatherapp.client.impl.rapidapiweatherclient;
 
 import by.motoluha.weatherapp.client.WeatherClient;
-import by.motoluha.weatherapp.client.impl.RapidApiWeatherClient.mapper.WeatherRapidMapper;
-import by.motoluha.weatherapp.client.impl.RapidApiWeatherClient.model.WeatherRapidResponse;
+import by.motoluha.weatherapp.client.impl.rapidapiweatherclient.mapper.WeatherRapidMapper;
+import by.motoluha.weatherapp.client.impl.rapidapiweatherclient.model.WeatherRapidResponse;
 import by.motoluha.weatherapp.entity.Weather;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

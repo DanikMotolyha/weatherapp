@@ -1,4 +1,4 @@
-package by.motoluha.weatherapp.client.impl.RapidApiWeatherClient.model;
+package by.motoluha.weatherapp.client.impl.rapidapiweatherclient.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

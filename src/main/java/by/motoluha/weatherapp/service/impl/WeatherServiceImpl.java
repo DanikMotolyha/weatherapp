@@ -51,12 +51,8 @@ public class WeatherServiceImpl implements WeatherService {
     public void scheduleGetCurrentWeather() {
         try {
             Weather currentWeather = weatherClient.getInformation();
-            WeatherDTO currentWeatherDTO = weatherMapper.toDto(currentWeather);
-            WeatherDTO firstByOrderByIdDesc = weatherMapper.toDto(weatherRepository.findFirstByOrderByIdDesc());
-            if (!currentWeatherDTO.equals(firstByOrderByIdDesc)) {
-                weatherRepository.save(currentWeather);
-                log.info("Save new weather info " + currentWeather);
-            }
+            weatherRepository.save(currentWeather);
+            log.info("Save new weather info " + currentWeather);
         } catch (Exception e) {
             log.error("Failed to retrieve or save weather information: {}", e.getMessage());
         }
